@@ -1,3 +1,5 @@
 {
-    "python.pythonPath": "C:\\Users\\ivan4\\.virtualenvs\\twitoff-sv4zsB6T\\Scripts\\python.exe"
+    "python.linting.pylintEnabled": false,
+    "python.linting.enabled": true,
+    "python.linting.pycodestyleEnabled": true
 }
