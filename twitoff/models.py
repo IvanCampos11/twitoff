@@ -1,5 +1,6 @@
 """SQLAlchemy models and utility functions for TwitOff."""
 from flask_sqlalchemy import SQLAlchemy
+
 DB = SQLAlchemy()
 
 
@@ -22,3 +23,12 @@ class Tweet(DB.Model):
 
     def __repr__(self):
         return '-Tweet {}-'.format(self.text)
+
+
+def insert_example_users():
+    """Example data to play with."""
+    austen = User(id=1, name='austen')
+    elon = User(id=2, name='elonmusk')
+    DB.session.add(austen)
+    DB.session.add(elon)
+    DB.session.commit()
