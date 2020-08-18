@@ -24,7 +24,6 @@ def add_or_update_user(username):
         db_user = (User.query.get(twitter_user.id) or
                    User(id=twitter_user.id, name=username))
         DB.session.add(db_user)
-        # Lets get the tweets - focusing on primary (not retweet/reply)
         tweets = twitter_user.timeline(
             count=200, exclude_replies=True, include_rts=False,
             tweet_mode='extended', since_id=db_user.newest_tweet_id
@@ -49,3 +48,5 @@ def insert_example_users():
     """Example data to play with."""
     add_or_update_user('austen')
     add_or_update_user('elonmusk')
+    add_or_update_user('realDonaldTrump')
+    add_or_update_user('Jorgensen4POTUS')
